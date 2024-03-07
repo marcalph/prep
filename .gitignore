@@ -4,6 +4,7 @@
 .venv*/
 .python-version
 .pdm-python
+.mypy_cache
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
