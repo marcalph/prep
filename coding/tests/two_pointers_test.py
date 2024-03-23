@@ -34,3 +34,9 @@ def test_sum_of_three(
     for data in sum_of_three_data:
         inpt, expected = data
         assert sum_of_three(*inpt) == expected
+
+
+@pytest.fixture
+def remove_nth_last_node_data() -> list[tuple[tuple[list[int], int], list[int]]]:
+    # todo(marcalph): generate appropriate fixture for linked-list testing
+    pass
