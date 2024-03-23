@@ -1,5 +1,6 @@
 import pytest
-from src.two_pointers import is_palindrome, sum_of_three
+from src.linked_list import LinkedList
+from src.two_pointers import is_palindrome, remove_nth_last_node, sum_of_three
 
 
 @pytest.fixture
@@ -36,7 +37,35 @@ def test_sum_of_three(
         assert sum_of_three(*inpt) == expected
 
 
+def create_linked_list(data: list[int]) -> LinkedList:
+    linked_list = LinkedList()
+    linked_list.create_linked_list(data)
+    return linked_list
+
+
 @pytest.fixture
 def remove_nth_last_node_data() -> list[tuple[tuple[list[int], int], list[int]]]:
-    # todo(marcalph): generate appropriate fixture for linked-list testing
-    pass
+    inpt = [
+        ([1, 2, 3, 4, 5], 2),
+        ([1, 2, 3, 4, 5], 1),
+        ([1, 2, 3, 4, 5], 5),
+        ([23, 28, 10, 5, 67, 39, 70, 28], 2),
+    ]
+    expected = [[1, 2, 3, 5], [1, 2, 3, 4], [2, 3, 4, 5], [23, 28, 10, 5, 67, 39, 28]]
+    return list(zip(inpt, expected))
+
+
+def test_remove_nth_last_node(
+    remove_nth_last_node_data: list[tuple[tuple[list[int], int], list[int]]]
+) -> None:
+    for data in remove_nth_last_node_data:
+        inpt, expected = data
+        linked_list = create_linked_list(inpt[0])
+        head = linked_list.head
+        result = remove_nth_last_node(head, inpt[1])
+        temp = result
+        result_list = []
+        while temp:
+            result_list.append(temp.data)
+            temp = temp.next
+        assert result_list == expected
