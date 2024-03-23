@@ -1,5 +1,16 @@
-# Two pointers is useful when we want to find 2 elements that verify a condiiton in a array traversed linearly
-# it is not adapted when we don't traverse linearly (i.e.) or need an exhaustive search
+"""
+The two-pointer technique is suitable when:
+
+1. The input data can be traversed linearly, i.e., it's in an array, linked list, or a string of characters.
+2. The focus is limited to a specific range of elements within the input data, as dictated by the positions of the two pointers, allowing us to consider a small subset of elements rather than the entire set.
+3. Problems usually involve comparing or swapping values pointed to by two indexes. In less common cases, each index may move along a separate array or string.
+
+However, the two-pointer technique is not suitable when:
+
+1. The input data cannot be traversed linearly, i.e., it's not in an array, linked list, or a string of characters.
+2. The problem requires an exhaustive search of the solution space, i.e., eliminating one solution does not eliminate any others.
+"""
+
 from src.linked_list import LinkedList
 from src.linked_list_node import LinkedListNode
 
