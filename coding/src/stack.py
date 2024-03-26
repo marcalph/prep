@@ -68,3 +68,30 @@ class MyQueue(object):
     def empty(self):
         # Write your code here
         return self._stack1.is_empty()
+
+
+def calculator(s):
+    s = s.replace(" ", "")
+    print(s)
+    sign, number, result = +1, "0", 0
+    stack = []
+    for char in s:
+        if char in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            number += char
+        elif char in ["-", "+"]:
+            result += sign * int(number)
+            number = "0"
+            sign = [-1, 1][char == "+"]
+        elif char in ["("]:
+            stack.append((sign, result))
+            number = "0"
+            result = 0
+            sign = 1
+        else:
+            result += sign * int(number)
+            prev_sign, prev = stack.pop()
+            result *= prev_sign
+            result += prev
+            number = 0
+
+    return result + sign * int(number)
