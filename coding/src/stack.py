@@ -24,6 +24,9 @@ class Stack(list):
     def is_empty(self):
         return len(self) == 0
 
+    def size(self):
+        return len(self)
+
 
 def remove_duplicate_pairs(string):
     pseudo_stack = [string[0]]
@@ -33,3 +36,35 @@ def remove_duplicate_pairs(string):
         else:
             pseudo_stack.append(char)
     return "".join(pseudo_stack)
+
+
+class MyQueue(object):
+    def __init__(self):
+        # Write your code here
+        self._stack1 = Stack()
+        self._stack2 = Stack()
+        self._front = None
+
+    def push(self, x):
+        # Write your code here
+        if self._stack1.is_empty():
+            self._front = x
+        self._stack1.push(x)
+
+    def pop(self):
+        # Write your code here
+        while not self._stack1.is_empty():
+            self._stack2.push(self._stack1.pop())
+        result = self._stack2.pop()
+        self._front = self._stack2.peek()
+        while not self._stack2.is_empty():
+            self._stack1.push(self._stack2.pop())
+        return result
+
+    def peek(self):
+        # Write your code here
+        return self._front
+
+    def empty(self):
+        # Write your code here
+        return self._stack1.is_empty()
