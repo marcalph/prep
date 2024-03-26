@@ -43,10 +43,10 @@ def has_cycle(head: LinkedListNode):
     return False
 
 
-def circular_array_has_loop(nums):
+def circular_array_loop(nums):
     size = len(nums)
     for i in range(size):
-        slow = fast = i
+        slow, fast = i, i
         forward = nums[i] > 0
 
         while True:
@@ -55,8 +55,8 @@ def circular_array_has_loop(nums):
                 break
 
             fast = next_step(fast, nums[fast], size)
-            if is_not_cycle(nums, forward, fast):
-                break
+            # if is_not_cycle(nums, forward, fast):
+            #     break
 
             fast = next_step(fast, nums[fast], size)
             if is_not_cycle(nums, forward, fast):
@@ -67,21 +67,16 @@ def circular_array_has_loop(nums):
     return False
 
 
-# A function to calculate the next step
-def next_step(pointer, value, size):
-    result = (pointer + value) % size
-    if result < 0:
-        result += size
+def next_step(pointer, step, size):
+    result = (pointer + step) % size
     return result
 
 
-# A function to detect a cycle doesn't exist
-def is_not_cycle(nums, prev_direction, pointer):
-    curr_direction = nums[pointer] >= 0
-    if (prev_direction != curr_direction) or (abs(nums[pointer] % len(nums)) == 0):
+def is_not_cycle(nums, direction, pointer):
+    curr_dir = nums[pointer] > 0
+    if (direction != curr_dir) or (abs(nums[pointer] % len(nums)) == 0):
         return True
-    else:
-        return False
+    return False
 
 
 if __name__ == "__main__":
