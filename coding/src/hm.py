@@ -1,0 +1,31 @@
+"""
+HashMap can be beneficial:
+
+if both these conditions are fulfilled:
+    1. When we require repeated fast access to data during the execution of the algorithm.
+    2. We need to store the relationship between two sets of data in order to compute the required result. 
+
+but is not if no useful relation can be established between two sets of data.
+"""
+
+
+class MyHashMap():
+    # Use the constructor below to initialize the 
+    # hash map based on the keyspace
+    def __init__(self):
+        # Write your code here
+        self.size=1007
+        self.arr = [-1] * self.size
+
+    def put(self, key, value):
+        # Write your code here
+        keyhash = key%self.size
+        self.arr[keyhash]=value
+
+    def get(self, key):
+        # Replace this placeholder return statement with your code
+        return self.arr[key%self.size]
+
+    def remove(self, key):
+        # Write your code here
+        self.arr[key%self.size]=-1
