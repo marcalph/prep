@@ -50,7 +50,7 @@ class RequestLogger:
             return True
         return False
     
-
+  
 def fraction_to_decimal(numerator, denominator):
     string_result = ""
     if numerator == 0:
