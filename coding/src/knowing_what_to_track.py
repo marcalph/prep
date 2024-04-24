@@ -19,7 +19,7 @@ def is_anagram(str1, str2):
     # Replace this placeholder return statement with your code
         return False
 
-    hm = {}
+    hm = {} 
     for ch in str1:
         hm[ch] = hm.get(ch, 0) + 1
     for ch in str2:
