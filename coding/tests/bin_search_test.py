@@ -1,5 +1,5 @@
 import pytest
-from src.bin_search import binary_search
+from src.bin_search import binary_search, first_bad_version
 
 
 @pytest.fixture
@@ -9,7 +9,21 @@ def binary_search_data() -> list[tuple[int, bool]]:
     return list(zip(inpt, expected))
 
 
-def test_is_happy_number(binary_search_data: list[tuple[int, bool]]) -> None:
+def test_bin_search(binary_search_data: list[tuple[int, bool]]) -> None:
     for data in binary_search_data:
         inpt, expected = data
         assert binary_search(*inpt) == expected
+
+
+
+@pytest.fixture
+def first_bad_version_data() -> list[tuple[int, bool]]:
+    inpt = [38, 13, 29, 40, 23]
+    expected = [28, 10, 10, 28, 19]
+    return list(zip(inpt, expected))
+
+
+def test_bin_search(first_bad_version_data: list[tuple[int, bool]]) -> None:
+    for data in first_bad_version_data:
+        inpt, expected = data
+        assert first_bad_version(inpt, expected) == expected
