@@ -1,5 +1,5 @@
 import pytest
-from src.linked_list import LinkedList
+from coding.src.ll import LinkedList
 from src.two_pointers import is_palindrome, remove_nth_last_node, sum_of_three
 
 

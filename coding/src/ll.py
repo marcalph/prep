@@ -1,4 +1,4 @@
-from src.linked_list_node import LinkedListNode
+from coding.src.ll_node import LinkedListNode
 
 
 # Template for the linked list

@@ -11,8 +11,8 @@ However, the two-pointer technique is not suitable when:
 2. The problem requires an exhaustive search of the solution space, i.e., eliminating one solution does not eliminate any others.
 """
 
-from src.linked_list import LinkedList
-from src.linked_list_node import LinkedListNode
+from coding.src.ll import LinkedList
+from coding.src.ll_node import LinkedListNode
 
 
 def is_palindrome(s: str):

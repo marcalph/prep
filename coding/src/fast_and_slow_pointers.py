@@ -11,7 +11,7 @@ However, the two-pointer technique is not suitable when:
     2. The problem can be solved with two pointers traversing an array or a linked list at the same pace.
 """
 
-from src.linked_list_node import LinkedListNode
+from coding.src.ll_node import LinkedListNode
 
 
 def find_square_sum(num):
