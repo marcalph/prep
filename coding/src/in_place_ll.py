@@ -29,4 +29,4 @@ def reverse_between(head, left, right):
         current.next = next.next
         next.next = prev.next
         prev.next = next
-    return dummy.next
+
