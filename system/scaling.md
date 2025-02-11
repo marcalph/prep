@@ -1,6 +1,6 @@
 # Notes
 
-## relationnal DB vs NoSQL
+## SCALING
 
 ### relational DB limits (Postgres, cloud sql, cloud spanner)
 
@@ -49,10 +49,8 @@ many to many relationships and hierarchical data
 ### caching strategies
 
 - write heavy, read light (logs)
-- write light, read heavy (user profile, news) 
+- write light, read heavy (user profile, news)
 - unicity of data (search queries)
-
-
 
 read-thourgh + write through -> perfect consistency
 
@@ -66,13 +64,12 @@ read-thourgh + write through -> perfect consistency
 | Refresh-Ahead               | The cache proactively refreshes data before it expires based on access patterns, keeping data fresh for reads.     | Read-Intensive (with predictable patterns) | Contracts (ensuring up-to-date information for compliance); Dashboards for Logs |
 |Read-Through + Write-Through| A combination where both read and write operations pass through the cache ensures data is consistent and up-to-date, suitable for applications |Mixed|(like payments) that require strong consistency on both reads and writes
 
-
 ### db scaling
 
 - sharding, but needs consistent hashing for reasharding
 - celebrity problem
 
-## scaling strategy
+## scaling roadmap
 
 - Keep web tier stateless
 - Build redundancy at every tier
@@ -82,3 +79,29 @@ read-thourgh + write through -> perfect consistency
 - Scale your data tier by sharding
 - Split tiers into individual services
 - Monitor your system and use automation tools
+
+## calculations
+
+|Power (2) | number |Short name|
+|----------|---------|----------|
+|10 | 1 Thousand |1 KB|
+|20 | 1 Million |1 MB|
+|30 | 1 Billion |1 GB|
+|40 | 1 Trillion |1 TB|
+
+
+| Operation Name                                      | Time (ms)       |
+|-----------------------------------------------------|-----------------|
+| L1 cache reference                                  | 5.0e-7 ms       |
+| Branch mispredict                                   | 5.0e-6 ms       |
+| L2 cache reference                                  | 7.0e-6 ms       |
+| Mutex lock/unlock                                   | 1.0e-4 ms       |
+| Main memory reference                               | 1.0e-4 ms       |
+| Compress 1K bytes with Zippy                        | 1.0e-2 ms       |
+| Send 2K bytes over 1 Gbps network                   | 2.0e-2 ms       |
+| Read 1 MB sequentially from memory                  | 2.5e-1 ms       |
+| Round trip within the same datacenter               | 5.0e-1 ms       |
+| Disk seek                                           | 1.0e+1 ms       |
+| Read 1 MB sequentially from the network             | 1.0e+1 ms       |
+| Read 1 MB sequentially from disk                    | 3.0e+1 ms       |
+| Send packet CA (California) -> Netherlands -> CA    | 1.5e+2 ms       |
