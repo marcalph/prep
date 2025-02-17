@@ -22,7 +22,7 @@ class Linear:
                 # chain rule:
                 # let e = (X_bias*w - y)
                 # C = (1/n) * sum(e^2)
-                # dL/df = 2e, and de/dw = X_bias (by linearity).
+                # dC/de = 2e, and de/dw = X_bias (by linearity).
                 # => dC/dw = (1/m) * X_bias^T * f.
                 grad = 2/n * X_bias.T @ (X_bias @ self.w - y)
                 new_weights = self.w - self.lr * grad
@@ -35,6 +35,45 @@ class Linear:
             raise ValueError('method should be normal or gd')
 
 
+    def _one_hot_encode(self, X, fit=True):
+        n_samples, n_features = X.shape
+        numeric_cols = []
+        categorical_cols = []
+        
+        for j in range(n_features):
+            col = X[:, j]
+            if np.issubdtype(col.dtype, np.number):
+                numeric_cols.append(col.reshape(-1, 1))
+            else:
+                # Categorical column
+                if fit:
+                    unique_vals = np.unique(col)
+                    self.onehot_mappings[j] = unique_vals
+                else:
+                    if j not in self.onehot_mappings:
+                        raise ValueError(f"Mapping for column {j} not found. Did you fit the model?")
+                    unique_vals = self.onehot_mappings[j]
+                
+                # Create one-hot encoding for column j.
+                num_categories = len(unique_vals)
+                onehot_encoded = np.zeros((n_samples, num_categories))
+                # Build a mapping from category to column index.
+                mapping = {val: idx for idx, val in enumerate(unique_vals)}
+                for i in range(n_samples):
+                   if col[i] in mapping:
+                        onehot_encoded[i, mapping[col[i]]] = 1
+                categorical_cols.append(onehot_encoded)
+        
+        if numeric_cols:
+            X_numeric = np.hstack(numeric_cols)
+        else:
+            X_numeric = np.empty((n_samples, 0))
+        if categorical_cols:
+            X_categorical = np.hstack(categorical_cols)
+        else:
+            X_categorical = np.empty((n_samples, 0))
+        
+        return X_numeric, X_categorical
 
     def __repr__(self):
         return f'Linear(w={self.w}, b={self.b})'
