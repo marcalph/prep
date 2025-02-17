@@ -31,9 +31,6 @@ class Linear:
                     print(f"Converged after {_+1} iterations")
                     break
                 self.w = new_weights
-
-
-
         else:
             raise ValueError('method should be normal or gd')
 
