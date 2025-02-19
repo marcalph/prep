@@ -9,6 +9,7 @@ package-mode = false
 python = "^3.11"
 hypothesis = "^6.102.4"
 numpy = "^2.2.3"
+scikit-learn = "^1.6.1"
 
 
 [tool.poetry.group.dev.dependencies]
