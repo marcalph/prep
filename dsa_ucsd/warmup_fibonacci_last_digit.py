@@ -1,3 +1,4 @@
+# last digit of a fibonacci number
 def naive_fibonacci_last_digit(n):
     if n <= 1:
         return n

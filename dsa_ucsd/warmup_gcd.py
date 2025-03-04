@@ -1,3 +1,4 @@
+# greatest common divisor
 def naive_gcd(a, b):
     current_gcd = 1
     if b == 0:
