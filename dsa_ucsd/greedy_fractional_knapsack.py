@@ -43,5 +43,5 @@ if __name__ == "__main__":
     n, capacity = data[0:2]
     values = data[2:(2 * n + 2):2]
     weights = data[3:(2 * n + 2):2]
-    opt_value = optimal_value(capacity, weights, values)
+    opt_value = optimal_value_fast(capacity, weights, values)
     print("{:.10f}".format(opt_value))
