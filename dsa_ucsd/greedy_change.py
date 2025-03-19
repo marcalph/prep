@@ -10,6 +10,7 @@ def change(money):
 def change_oneliner(money):
     return money//10 + (money%10)//5 + money%5
 
+#TODO fix
 
 if __name__ == '__main__':
     m = int(input())
