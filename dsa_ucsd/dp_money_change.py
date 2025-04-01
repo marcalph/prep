@@ -12,4 +12,5 @@ def change(money):
 
 if __name__ == '__main__':
     m = int(input())
-    print(change(m))
+    print(change(m)) 
+    
