@@ -5,17 +5,18 @@ Use this under the following conditions:
 
     Limited Output Options: The problem's solution involves selecting from a limited set of possible outputs, such as Yes/No, True/False, Valid/Invalid, Player 1/Player 2.
 """
+
 from collections import Counter
 
 from collections import Counter
+
 
 def permute_palindrome(st):
     """
     Check if a given string can be rearranged to form a palindrome.
     """
     cnt = Counter(st)
-    return len([v for v in cnt.values() if v%2==1]) <=1
-
+    return len([v for v in cnt.values() if v % 2 == 1]) <= 1
 
 
 def is_anagram(str1, str2):
@@ -34,13 +35,13 @@ def is_anagram(str1, str2):
     return len(list(filter(lambda x: x != 0, vals))) == 0
 
 
-
 class FreqStack:
     """
     A class representing a frequency stack.
         push(value): Pushes the given value into the stack.
         pop(): Pops and returns the most frequent element from the stack.
     """
+
     def __init__(self):
         self.inp = []
         self.hm = {}

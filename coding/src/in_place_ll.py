@@ -1,6 +1,7 @@
 from coding.src.ll import LinkedList
 from coding.src.ll_node import LinkedListNode
-            
+
+
 def reverse(head):
     prev, current, next = None, head, None
     while current:
@@ -9,7 +10,7 @@ def reverse(head):
         prev = current
         current = next
     head = prev
-    
+
     return head
 
 
@@ -20,11 +21,11 @@ def reverse_between(head, left, right):
     dummy.next = head
     prev = dummy
 
-    for _ in range(left-1):
+    for _ in range(left - 1):
         prev = prev.next
     current = prev.next
 
-    for _ in range(right-left):
+    for _ in range(right - left):
         next = current.next
         current.next = next.next
         next.next = prev.next
@@ -32,15 +33,13 @@ def reverse_between(head, left, right):
 
 
 def reverse_linked_list(head, k):
-	previous, current, next = None, head, None
-	for _ in range(k):
-		next = current.next
-		current.next = previous
-		previous = current
-		current = next
-	return previous, current
-
-
+    previous, current, next = None, head, None
+    for _ in range(k):
+        next = current.next
+        current.next = previous
+        previous = current
+        current = next
+    return previous, current
 
 
 def reverse_k_groups(head, k):
@@ -48,7 +47,7 @@ def reverse_k_groups(head, k):
     dummy.next = head
     ptr = dummy
 
-    while ptr:    
+    while ptr:
         tracker = ptr
         for i in range(k):
             if tracker == None:

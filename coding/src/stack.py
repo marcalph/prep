@@ -7,7 +7,7 @@ However, a Stack is not suitable when:
 2. The order of outputs or processing operations is not significant.
 """
 
-  
+
 class Stack(list):
     def __init__(self, data: list[int]):
         super().__init__(data)

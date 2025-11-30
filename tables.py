@@ -1,5 +1,6 @@
 from tabulate import tabulate
 
+
 # Generate the standard Fibonacci sequence
 def fibonacci_sequence(n):
     sequence = [(0, 0), (1, 1)]
@@ -8,6 +9,7 @@ def fibonacci_sequence(n):
         a, b = b, a + b
         sequence.append((i, b))
     return sequence
+
 
 # Generate the first 10 Fibonacci numbers
 sequence = fibonacci_sequence(10)

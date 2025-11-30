@@ -1,8 +1,7 @@
 from sys import stdin
 from collections import namedtuple
 
-Event = namedtuple('Event', ['coordinate', 'type', 'index'])
-
+Event = namedtuple("Event", ["coordinate", "type", "index"])
 
 
 def points_cover_naive(starts, ends, points):
@@ -22,30 +21,30 @@ def points_cover(starts, ends, points):
 
     events = []
     for i in range(len(starts)):
-        events.append(Event(starts[i], 'l', i))
-        events.append(Event(ends[i],   'r', i))
+        events.append(Event(starts[i], "l", i))
+        events.append(Event(ends[i], "r", i))
     for i in range(len(points)):
-        events.append(Event(points[i], 'p', i))
+        events.append(Event(points[i], "p", i))
 
     events = sorted(events)
     number_of_segments = 0
     for e in events:
-        if e.type == 'l':
+        if e.type == "l":
             number_of_segments += 1
-        elif e.type == 'r':
+        elif e.type == "r":
             number_of_segments -= 1
-        elif e.type == 'p':
+        elif e.type == "p":
             count[e.index] = number_of_segments
         else:
             assert False
 
     return count
-    
+
+
 from sys import stdin
 from collections import namedtuple
 
-Event = namedtuple('Event', ['coordinate', 'type', 'index'])
-
+Event = namedtuple("Event", ["coordinate", "type", "index"])
 
 
 def points_cover_naive(starts, ends, points):
@@ -65,25 +64,25 @@ def points_cover(starts, ends, points):
 
     events = []
     for i in range(len(starts)):
-        events.append(Event(starts[i], 'l', i))
-        events.append(Event(ends[i],   'r', i))
+        events.append(Event(starts[i], "l", i))
+        events.append(Event(ends[i], "r", i))
     for i in range(len(points)):
-        events.append(Event(points[i], 'p', i))
+        events.append(Event(points[i], "p", i))
 
     events = sorted(events)
     number_of_segments = 0
     for e in events:
-        if e.type == 'l':
+        if e.type == "l":
             number_of_segments += 1
-        elif e.type == 'r':
+        elif e.type == "r":
             number_of_segments -= 1
-        elif e.type == 'p':
+        elif e.type == "p":
             count[e.index] = number_of_segments
         else:
             assert False
 
     return count
-    
+
 
 from bisect import bisect_left, bisect_right
 
@@ -99,13 +98,11 @@ def points_cover_bisect(starts, ends, points):
     return count
 
 
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     data = list(map(int, stdin.read().split()))
     n, m = data[0], data[1]
-    input_starts, input_ends = data[2:2 * n + 2:2], data[3:2 * n + 2:2]
-    input_points = data[2 * n + 2:]
+    input_starts, input_ends = data[2 : 2 * n + 2 : 2], data[3 : 2 * n + 2 : 2]
+    input_points = data[2 * n + 2 :]
 
     output_count = points_cover(input_starts, input_ends, input_points)
     print(*output_count)

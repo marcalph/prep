@@ -11,7 +11,6 @@ def naive_gcd(a, b):
     return current_gcd
 
 
-
 def gcd(a, b):
     if b == 0:
         return a

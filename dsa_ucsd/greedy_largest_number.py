@@ -14,9 +14,8 @@ def largest_number_naive(numbers):
 
 def largest_number(numbers):
     maxlen = max([len(str(s)) for s in numbers])
-    numbers.sort(key=lambda a: "".join(list(str(a))*maxlen)[:maxlen])
+    numbers.sort(key=lambda a: "".join(list(str(a)) * maxlen)[:maxlen])
     return "".join(numbers)
-
 
 
 def largest_number_solution(xs):
@@ -26,8 +25,9 @@ def largest_number_solution(xs):
                 xs[i], xs[i + 1] = xs[i + 1], xs[i]
 
     return int("".join(xs))
-               
-if __name__ == '__main__':
+
+
+if __name__ == "__main__":
     _ = int(input())
     input_numbers = input().split()
     print(largest_number_solution(input_numbers))

@@ -14,12 +14,11 @@ def naive_lcm(a, b):
 
     assert False
 
+
 def lcm(a, b):
-    return int(abs(a*b)/gcd(a,b))
+    return int(abs(a * b) / gcd(a, b))
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     a, b = map(int, input().split())
     print(lcm(a, b))
-

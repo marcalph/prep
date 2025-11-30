@@ -5,22 +5,23 @@ def partition(array, left, right):
     # write your code here
     pivot = array[left]
     m1 = left
-    for i in range(left+1, right+1):
-        if array[i]<=pivot:
-            m1+=1
+    for i in range(left + 1, right + 1):
+        if array[i] <= pivot:
+            m1 += 1
             array[i], array[m1] = array[m1], array[i]
     array[left], array[m1] = array[m1], array[left]
     return m1
-    
+
 
 def quick_sort(array, left, right):
     if left >= right:
         return
     k = randint(left, right)
     array[left], array[k] = array[k], array[left]
-    m1= partition(array, left, right)
+    m1 = partition(array, left, right)
     quick_sort(array, left, m1 - 1)
     quick_sort(array, m1 + 1, right)
+
 
 def partition3(arr, l, r):
     pivot = arr[l]  # Choose the leftmost element as the pivot
@@ -29,7 +30,7 @@ def partition3(arr, l, r):
     i = l  # Current index
 
     while i <= gt:
-        if arr[i] < pivot:  
+        if arr[i] < pivot:
             arr[lt], arr[i] = arr[i], arr[lt]  # Swap and expand the left region
             lt += 1
             i += 1
@@ -68,7 +69,7 @@ def randomized_quick_sort(array, left, right):
     randomized_quick_sort(array, m2 + 1, right)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     input_n = int(input())
     elements = list(map(int, input().split()))
     assert len(elements) == input_n

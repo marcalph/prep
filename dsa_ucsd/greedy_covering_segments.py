@@ -1,7 +1,8 @@
 from sys import stdin
 from collections import namedtuple
 
-Segment = namedtuple('Segment', 'start end')
+Segment = namedtuple("Segment", "start end")
+
 
 def optimal_points_naive(segments):
     points = []
@@ -21,11 +22,9 @@ def segments_cover_(segments):
     while len(segments) > 0:
         r = min([s.right for s in segments])
         points.append(r)
-        segments = [s for s in segments
-                    if not is_covered(s, r)]
+        segments = [s for s in segments if not is_covered(s, r)]
 
     return points
-    
 
 
 def segments_cover(segments):
@@ -38,9 +37,9 @@ def segments_cover(segments):
             points.append(r)
 
     return points
-    
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     input = stdin.read()
     n, *data = map(int, input.split())
     segments = list(map(lambda x: Segment(x[0], x[1]), zip(data[::2], data[1::2])))

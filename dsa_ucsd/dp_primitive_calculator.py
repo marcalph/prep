@@ -1,5 +1,5 @@
 def calculator(n):
-    table = [float('inf')] * (n + 1)
+    table = [float("inf")] * (n + 1)
     table[1] = 0
 
     for k in range(2, n + 1):
@@ -22,7 +22,7 @@ def calculator(n):
     return [1] + list(reversed(operations))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input())
     sequence = calculator(n)
     print(len(sequence) - 1)
