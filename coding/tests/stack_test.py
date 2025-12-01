@@ -9,9 +9,7 @@ def remove_duplicate_pairs_data() -> list[tuple[str, str]]:
     return list(zip(inpt, expected))
 
 
-def test_remove_duplicate_pairs(
-    remove_duplicate_pairs_data: list[tuple[tuple[list[int], int], bool]]
-) -> None:
+def test_remove_duplicate_pairs(remove_duplicate_pairs_data: list[tuple[tuple[list[int], int], bool]]) -> None:
     for data in remove_duplicate_pairs_data:
         inpt, expected = data
         assert remove_duplicate_pairs(inpt) == expected

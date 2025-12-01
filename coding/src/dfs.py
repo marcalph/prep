@@ -1,5 +1,5 @@
 """
-useful if 
+useful if
     Tree data structure
     Balanced/low branching factor
     Hierarchical structures
@@ -20,8 +20,6 @@ def binary_tree_diameter(root):
             return 0, 0
         left_height, left_diameter = dfs(node.left)
         right_height, right_diameter = dfs(node.right)
-        return 1 + max(left_height, right_height), max(
-            left_height + right_height, left_diameter, right_diameter
-        )
+        return 1 + max(left_height, right_height), max(left_height + right_height, left_diameter, right_diameter)
 
     return dfs(root)[1]

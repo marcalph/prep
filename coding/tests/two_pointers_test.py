@@ -30,9 +30,7 @@ def sum_of_three_data() -> list[tuple[tuple[list[int], int], bool]]:
     return list(zip(inpt, expected))
 
 
-def test_sum_of_three(
-    sum_of_three_data: list[tuple[tuple[list[int], int], bool]]
-) -> None:
+def test_sum_of_three(sum_of_three_data: list[tuple[tuple[list[int], int], bool]]) -> None:
     for data in sum_of_three_data:
         inpt, expected = data
         assert sum_of_three(*inpt) == expected
@@ -63,9 +61,7 @@ def remove_nth_last_node_data() -> list[tuple[tuple[list[int], int], list[int]]]
     return list(zip(inpt, expected))
 
 
-def test_remove_nth_last_node(
-    remove_nth_last_node_data: list[tuple[tuple[list[int], int], list[int]]]
-) -> None:
+def test_remove_nth_last_node(remove_nth_last_node_data: list[tuple[tuple[list[int], int], list[int]]]) -> None:
     for data in remove_nth_last_node_data:
         inpt, expected = data
         linked_list = create_linked_list(inpt[0])

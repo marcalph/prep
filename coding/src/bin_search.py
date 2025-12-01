@@ -1,6 +1,6 @@
-""""
+""" "
 Use this if:
-    - the array might be sorted and then rotated around some unknown pivotor some elements might be modified based on a specific condition. 
+    - the array might be sorted and then rotated around some unknown pivotor some elements might be modified based on a specific condition.
     - searching for a target satisfying multiple requirements, a modified binary search can be used.
         e. g. finding a range rather than a single target or finding the leftmost or the rightmost occurrence of a target value.
 don't use this if:

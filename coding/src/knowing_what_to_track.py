@@ -1,11 +1,3 @@
-"""
-Use this under the following conditions:
-    Frequency Tracking: The problem involves tallying the occurrences of individual elements or combinations of elements within a dataset.
-    Pattern Recognition: The problem involves identifying recurring patterns or frequent repetitions of certain elements or combinations in the dataset, whihc points to freq counting.
-
-    Limited Output Options: The problem's solution involves selecting from a limited set of possible outputs, such as Yes/No, True/False, Valid/Invalid, Player 1/Player 2.
-"""
-
 from collections import Counter
 
 

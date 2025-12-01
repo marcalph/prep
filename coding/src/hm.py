@@ -3,7 +3,7 @@ HashMap can be beneficial:
 
 if both these conditions are fulfilled:
     1. When we require repeated fast access to data during the execution of the algorithm.
-    2. We need to store the relationship between two sets of data in order to compute the required result. 
+    2. We need to store the relationship between two sets of data in order to compute the required result.
 
 but is not if no useful relation can be established between two sets of data.
 """
@@ -75,11 +75,7 @@ def fraction_to_decimal(numerator, denominator):
         if str(remainder) in hm:
             append = ")"
             string_result += append
-            return (
-                string_result[: hm[str(remainder)]]
-                + "("
-                + string_result[hm[str(remainder)] :]
-            )
+            return string_result[: hm[str(remainder)]] + "(" + string_result[hm[str(remainder)] :]
 
     # Replace this placeholder return statement with your code
     return string_result
