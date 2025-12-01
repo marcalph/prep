@@ -2,10 +2,11 @@ from typing import List
 
 
 def triplet_sum(nums: List[int]) -> List[List[int]]:
+    # skip duplicates: after finding a triplet, skip identical values to avoid duplicate results
     result = []
     nums.sort()
     for i in range(len(nums) - 2):
-        if i > 0 and nums[i] == nums[i - 1]:
+        if i > 0 and nums[i] == nums[i - 1]:  # skip duplicate i
             continue
         left, right = i + 1, len(nums) - 1
         while left < right:
