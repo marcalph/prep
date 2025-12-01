@@ -1,4 +1,4 @@
-def largest_containers(heights: list[int] = [2, 7, 8, 3, 7, 6]) -> int:
+def largest_container(heights: list[int] = [2, 7, 8, 3, 7, 6]) -> int:
     left, right = 0, len(heights) - 1
     running_max = 0
     while left < right:
@@ -12,4 +12,4 @@ def largest_containers(heights: list[int] = [2, 7, 8, 3, 7, 6]) -> int:
 
 
 if __name__ == "__main__":
-    print(largest_containers())
+    print(largest_container())
