@@ -1,5 +1,5 @@
-from sys import stdin
 from collections import namedtuple
+from sys import stdin
 
 Segment = namedtuple("Segment", "start end")
 

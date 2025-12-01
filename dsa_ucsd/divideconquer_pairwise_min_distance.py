@@ -2,7 +2,6 @@ from collections import namedtuple
 from itertools import combinations
 from math import sqrt
 
-
 Point = namedtuple("Point", "x y")
 
 

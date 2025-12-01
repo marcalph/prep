@@ -1,5 +1,5 @@
-from sys import stdin
 from collections import namedtuple
+from sys import stdin
 
 Event = namedtuple("Event", ["coordinate", "type", "index"])
 
@@ -41,8 +41,8 @@ def points_cover(starts, ends, points):
     return count
 
 
-from sys import stdin
 from collections import namedtuple
+from sys import stdin
 
 Event = namedtuple("Event", ["coordinate", "type", "index"])
 

@@ -5,8 +5,8 @@ The Strategy pattern would be a good choice for handling payments, as it would a
 The Observer pattern would be useful for notifying the parking lot manager about the availability of parking spots, and the State pattern could be used to manage the states of the parking spots (free or occupied).
 """
 
-from enum import Enum
 from abc import ABC, abstractmethod
+from enum import Enum
 
 
 # start with constants and enums

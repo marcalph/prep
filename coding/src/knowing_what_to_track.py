@@ -8,8 +8,6 @@ Use this under the following conditions:
 
 from collections import Counter
 
-from collections import Counter
-
 
 def permute_palindrome(st):
     """
