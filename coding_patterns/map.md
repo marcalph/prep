@@ -10,17 +10,17 @@ B --> C[ Hash Maps and Sets ☑☐]
 C --> D1[ Linked Lists ☑☐]
 C --> D2[ Binary Search ☑☐]
 C --> D3[ Sliding Windows ☑☐]
-C --> D4[ Prefix Sums ☐☐]
+C --> D4[ Prefix Sums ☑☐]
 
 D1 --> E1[ Fast and Slow Pointers ☑☐]
 
 D2 --> E2[ Stacks ☑☐]
 D3 --> E2
 
-E2 --> F[ Heaps ☐☐]
+E2 --> F[ Heaps ☑☐]
 
 F --> G1[ Trees ☐☐]
-F --> G2[ Intervals ☐☐]
+F --> G2[ Intervals ☑☐]
 F --> G3[ Sort and Search ☐☐]
 
 G1 --> H1[ Tries ☐☐]
