@@ -5,16 +5,16 @@
 flowchart TD
 A[Coding Interview Problems]
 A --> B[ Two Pointers ☑☐]
-B --> C[ Hash Maps and Sets ☐☐]
+B --> C[ Hash Maps and Sets ☑☐]
 
-C --> D1[ Linked Lists ☐☐]
-C --> D2[ Binary Search ☐☐]
-C --> D3[ Sliding Windows ☐☐]
+C --> D1[ Linked Lists ☑☐]
+C --> D2[ Binary Search ☑☐]
+C --> D3[ Sliding Windows ☑☐]
 C --> D4[ Prefix Sums ☐☐]
 
-D1 --> E1[ Fast and Slow Pointers ☐☐]
+D1 --> E1[ Fast and Slow Pointers ☑☐]
 
-D2 --> E2[ Stacks ☐☐]
+D2 --> E2[ Stacks ☑☐]
 D3 --> E2
 
 E2 --> F[ Heaps ☐☐]
