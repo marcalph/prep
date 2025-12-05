@@ -4,7 +4,7 @@ class ListNode:
         self.next = next
 
 
-def linked_list_midpoint(head: ListNode) -> ListNode:
+def linked_list_midpoint(head: ListNode) -> ListNode | None:
     # Write your code here
     slow = fast = head
     while fast and fast.next:

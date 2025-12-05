@@ -1,5 +1,6 @@
 import pytest
-from src.bin_search import binary_search, first_bad_version
+
+from coding.src.bin_search import binary_search, first_bad_version
 
 
 @pytest.fixture

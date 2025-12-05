@@ -13,22 +13,22 @@ def reverse(head):
     return head
 
 
-def reverse_between(head, left, right):
+def reverse_between(head: LinkedListNode | None, left: int, right: int) -> LinkedListNode | None:
     if not head or left == right:
         return head
-    dummy = LinkedListNode(0)
+    dummy: LinkedListNode = LinkedListNode(0)
     dummy.next = head
-    prev = dummy
+    prev: LinkedListNode = dummy
 
     for _ in range(left - 1):
-        prev = prev.next
-    current = prev.next
+        prev = prev.next  # type: ignore[assignment]
+    current: LinkedListNode | None = prev.next
 
     for _ in range(right - left):
-        next = current.next
-        current.next = next.next
-        next.next = prev.next
-        prev.next = next
+        next_node = current.next  # type: ignore[union-attr]
+        current.next = next_node.next  # type: ignore[union-attr]
+        next_node.next = prev.next  # type: ignore[union-attr]
+        prev.next = next_node
 
 
 def reverse_linked_list(head, k):
@@ -41,25 +41,25 @@ def reverse_linked_list(head, k):
     return previous, current
 
 
-def reverse_k_groups(head, k):
-    dummy = LinkedListNode(0)
+def reverse_k_groups(head: LinkedListNode | None, k: int) -> LinkedListNode | None:
+    dummy: LinkedListNode = LinkedListNode(0)
     dummy.next = head
-    ptr = dummy
+    ptr: LinkedListNode | None = dummy
 
     while ptr:
-        tracker = ptr
+        tracker: LinkedListNode | None = ptr
         for i in range(k):
-            if tracker == None:
+            if tracker is None:
                 break
             tracker = tracker.next
 
-        if tracker == None:
+        if tracker is None:
             break
 
         previous, current = reverse_linked_list(ptr.next, k)
 
         last_node_of_reversed_group = ptr.next
-        last_node_of_reversed_group.next = current
+        last_node_of_reversed_group.next = current  # type: ignore[union-attr]
         ptr.next = previous
         ptr = last_node_of_reversed_group
 

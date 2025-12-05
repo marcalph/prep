@@ -12,8 +12,8 @@ repos:
       entry: uv run ruff check --fix
       language: system
       types: [file, python]
-    - id: pyright
-      name: pyright
-      entry: uv run pyright
+    - id: ty
+      name: ty
+      entry: uv run ty check
       language: system
       types: [file, python]

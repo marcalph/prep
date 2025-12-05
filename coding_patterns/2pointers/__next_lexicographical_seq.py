@@ -1,17 +1,18 @@
 def next_lexicographical_sequence(s: str = "abcd") -> str:
     # borked
-    s = [char for char in s]
+    chars = list(s)
     start_pos = 0
-    for i in range(start_pos + 1, len(s)):
-        if s[i] > s[start_pos]:
+    for i in range(start_pos + 1, len(chars)):
+        if chars[i] > chars[start_pos]:
             start_pos = i
     if start_pos == 0:
-        return sorted(s)
+        return "".join(sorted(chars))
 
     for i in range(start_pos - 1, 0, -1):
-        if s[i] < s[start_pos]:
-            s[i], s[start_pos] = s[start_pos], s[i]
-        return "".join(s)
+        if chars[i] < chars[start_pos]:
+            chars[i], chars[start_pos] = chars[start_pos], chars[i]
+        return "".join(chars)
+    return "".join(chars)
 
 
 if __name__ == "__main__":

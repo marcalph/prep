@@ -4,7 +4,7 @@ class ListNode:
         self.next = next
 
 
-def linked_list_intersection(head_A: ListNode, head_B: ListNode) -> ListNode:
+def linked_list_intersection(head_A: ListNode, head_B: ListNode) -> ListNode | None:
     # Write your code here
     ptra = head_A
     ptrb = head_B

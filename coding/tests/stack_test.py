@@ -1,5 +1,6 @@
 import pytest
-from src.stack import remove_duplicate_pairs
+
+from ..src.stack import remove_duplicate_pairs
 
 
 @pytest.fixture

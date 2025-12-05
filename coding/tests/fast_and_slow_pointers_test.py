@@ -1,5 +1,6 @@
 import pytest
-from src.fast_and_slow_pointers import is_happy_number
+
+from coding.src.fast_and_slow_pointers import is_happy_number
 
 
 @pytest.fixture

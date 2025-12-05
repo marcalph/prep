@@ -9,14 +9,14 @@ However, a Stack is not suitable when:
 
 
 class Stack(list):
-    def __init__(self, data: list[int]):
-        super().__init__(data)
+    def __init__(self, data: list[int] | None = None):
+        super().__init__(data or [])
 
     def push(self, value):
         self.append(value)
 
-    def pop(self):
-        return super().pop()
+    def pop(self, index: int = -1):  # type: ignore[override]
+        return super().pop(index)
 
     def peek(self):
         return self[-1]

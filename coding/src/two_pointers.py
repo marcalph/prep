@@ -28,16 +28,17 @@ def sum_of_three(arr: list[int], target):
     return False
 
 
-def remove_nth_last_node(head: LinkedListNode, n: int):
-    left, right = head, head
+def remove_nth_last_node(head: LinkedListNode | None, n: int) -> LinkedListNode | None:
+    left: LinkedListNode | None = head
+    right: LinkedListNode | None = head
     for _ in range(n):
-        right = right.next
+        right = right.next  # type: ignore[union-attr]
     if right is None:
-        return left.next  # we remove the head
+        return left.next if left else None  # we remove the head
     while right.next is not None:
-        left = left.next
+        left = left.next  # type: ignore[union-attr]
         right = right.next
-    left.next = left.next.next
+    left.next = left.next.next  # type: ignore[union-attr]
     return head
 
 

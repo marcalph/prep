@@ -16,7 +16,7 @@ dev = [
     "pre-commit>=3.6.2,<4",
     "pytest>=8.1.1,<9",
     "ruff>=0.8.0",
-    "pyright>=1.1.389",
+    "ty",
 ]
 
 [tool.uv]
@@ -33,6 +33,5 @@ line-length = 240
 select = ["E", "F", "W", "I"]
 ignore = ["E501", "E402", "E711", "E741", "F811"]
 
-[tool.pyright]
-pythonVersion = "3.12"
-typeCheckingMode = "off"
+[tool.ty]
+# python-version = "3.12"  # ty auto-detects from requires-python
