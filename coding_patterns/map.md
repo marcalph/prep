@@ -19,11 +19,11 @@ D3 --> E2
 
 E2 --> F[ Heaps ☑☐]
 
-F --> G1[ Trees ☐☐]
+F --> G1[ Trees ☑☐]
 F --> G2[ Intervals ☑☐]
 F --> G3[ Sort and Search ☐☐]
 
-G1 --> H1[ Tries ☐☐]
+G1 --> H1[ Tries ☑☐]
 G1 --> H2[ Graphs ☐☐]
 
 G2 --> H3[ Backtracking ☐☐]
