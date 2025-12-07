@@ -1,6 +1,7 @@
 from typing import List
 
-#Definition of ListNode:
+
+# Definition of ListNode:
 class ListNode:
     def __init__(self, val=None, next=None):
         self.val = val
@@ -9,7 +10,8 @@ class ListNode:
 
 import heapq
 
-def combine_sorted_linked_lists(lists: List[ListNode]) -> ListNode:
+
+def combine_sorted_linked_lists(lists: List[ListNode]) -> ListNode | None:
     heap = []
 
     # Push the head of each list into the heap
@@ -18,7 +20,7 @@ def combine_sorted_linked_lists(lists: List[ListNode]) -> ListNode:
             heapq.heappush(heap, (node.val, i, node))
 
     dummy = ListNode(0)
-    current = dummy
+    current = dummy  # type:ignore
 
     while heap:
         val, i, node = heapq.heappop(heap)
