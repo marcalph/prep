@@ -25,3 +25,7 @@ coverage.xml
 .pytest_cache/
 cover/
 ml/
+
+
+
+example/
