@@ -1,26 +1,26 @@
 def next_lexicographical_sequence(s: str = "abcd") -> str:
-    s = list(s)
-    r = len(s) - 1
+    chars = list(s)
+    r = len(chars) - 1
     # find pivot
     pivot = 0
     while r > 1:
-        if s[r - 1] >= s[r]:
+        if chars[r - 1] >= chars[r]:
             r -= 1
         else:
             pivot = r - 1
             break
     if pivot == 0:
-        return "".join(s[::-1])
+        return "".join(chars[::-1])
     # find rightmost successor to pivot
-    r = len(s) - 1
+    r = len(chars) - 1
     while r > pivot:
-        if s[pivot] > s[r]:
+        if chars[pivot] > chars[r]:
             r -= 1
         else:
-            s[pivot], s[r] = s[r], s[pivot]
+            chars[pivot], chars[r] = chars[r], chars[pivot]
             break
     # return string w/ pivot and rightmost successor swapped + suffix sorted
-    return "".join(s[: pivot + 1] + sorted(s[pivot + 1 :]))
+    return "".join(chars[: pivot + 1] + sorted(chars[pivot + 1 :]))
 
 
 if __name__ == "__main__":
