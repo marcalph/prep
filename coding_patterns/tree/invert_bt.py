@@ -1,5 +1,3 @@
-
-
 class TreeNode:
     def __init__(self, val):
         self.val = val
@@ -7,7 +5,7 @@ class TreeNode:
         self.right = None
 
 
-def invert_binary_tree(root: TreeNode) -> TreeNode:
+def invert_binary_tree(root: TreeNode | None) -> TreeNode | None:
     # Write your code gere
     if root is None:
         return None

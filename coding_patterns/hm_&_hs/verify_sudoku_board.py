@@ -1,12 +1,14 @@
 from typing import List
 
+
 def verify_sudoku_board(board: List[List[int]]) -> bool:
     # Write your code here
     from collections import defaultdict
-    rowz, colz,  squarz = defaultdict(set),defaultdict(set),defaultdict(set)
+
+    rowz, colz, squarz = defaultdict(set), defaultdict(set), defaultdict(set)
     for i in range(len(board)):
         for j in range(len(board[0])):
-            if (val:=board[i][j]) !=0:
+            if (val := board[i][j]) != 0:
                 if val in rowz[i]:
                     return False
                 rowz[i].add(board[i][j])

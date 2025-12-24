@@ -1,9 +1,10 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class TrieNode:
-    children: dict= {}
-    is_word:bool = False
+    children: dict = {}
+    is_word: bool = False
 
 
 class Trie:
@@ -16,7 +17,7 @@ class Trie:
             if char not in node.children:
                 node.children[char] = TrieNode()
             node = node.children[char]
-        node.is_end = True
+        node.is_word = True
 
     def search(self, word: str) -> bool:
         node = self.root
@@ -24,7 +25,7 @@ class Trie:
             if char not in node.children:
                 return False
             node = node.children[char]
-        return node.is_end
+        return node.is_word
 
     def has_prefix(self, prefix: str) -> bool:
         node = self.root
