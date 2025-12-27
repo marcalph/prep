@@ -3,6 +3,7 @@ def next_lexicographical_sequence(s: str = "abcd") -> str:
     r = len(chars) - 1
     # find pivot
     pivot = 0
+    # ugly while
     while r > 1:
         if chars[r - 1] >= chars[r]:
             r -= 1
