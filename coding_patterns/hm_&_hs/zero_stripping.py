@@ -1,5 +1,6 @@
 def zero_striping(matrix: list[list[int]]) -> None:
     rows, cols = set(), set()
+    # can use also use first row and first col as hs
     m, n = len(matrix), len(matrix[0])
     for i, row in enumerate(matrix):
         for j, val in enumerate(row):
